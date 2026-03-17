@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Rock Paper Scissors</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <meta name="description" content="Play Rock Paper Scissors against an AI that learns from your moves.">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Rock Paper Scissors</h1>
+            <p class="subtitle">Can you beat the learning AI?</p>
+        </header>
+
+        <div class="game-area">
+            <div class="score-board">
+                <div class="score-card user-score">
+                    <h2>You</h2>
+                    <span id="user-score-val">0</span>
+                </div>
+                <div class="vs-badge">VS</div>
+                <div class="score-card ai-score">
+                    <h2>AI</h2>
+                    <span id="ai-score-val">0</span>
+                </div>
+            </div>
+
+            <div class="battlefield">
+                <div class="move-display" id="user-display">
+                    <span class="emoji" id="user-emoji">🤔</span>
+                    <p id="user-text">Awaiting Move</p>
+                </div>
+                <div class="result-display">
+                    <h3 id="round-result">Let's Play!</h3>
+                </div>
+                <div class="move-display" id="ai-display">
+                    <span class="emoji" id="ai-emoji">🤖</span>
+                    <p id="ai-text">AI is ready</p>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button class="action-btn rock-btn" onclick="playGame('Rock')">
+                    <span class="btn-icon">✊</span> Rock
+                </button>
+                <button class="action-btn paper-btn" onclick="playGame('Paper')">
+                    <span class="btn-icon">✋</span> Paper
+                </button>
+                <button class="action-btn scissors-btn" onclick="playGame('Scissors')">
+                    <span class="btn-icon">✌️</span> Scissors
+                </button>
+            </div>
+            
+            <div class="reset-wrapper">
+                 <button class="reset-btn" onclick="resetGame()">Reset Game</button>
+            </div>
+        </div>
+
+        <aside class="stats-panel">
+            <h3>Game Statistics</h3>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-label">Total Rounds</span>
+                    <span class="stat-value" id="stat-rounds">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Draws</span>
+                    <span class="stat-value" id="stat-draws">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Win Rate</span>
+                    <span class="stat-value" id="stat-winrate">0%</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Most Frequent Move</span>
+                    <span class="stat-value" id="stat-frequent">-</span>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <script src="{{ url_for('static', filename='game.js') }}"></script>
+</body>
+</html>
