@@ -43,7 +43,7 @@ To run this project locally, ensure you have Python 3.8+ installed on your machi
 
 **1. Clone the repository:**
 ```bash
-git clone https://github.com/your-username/ai-rock-paper-scissors.git
+git clone https://github.com/Shayan-hab/ai-rock-paper-scissors.git
 cd ai-rock-paper-scissors
 ```
 
